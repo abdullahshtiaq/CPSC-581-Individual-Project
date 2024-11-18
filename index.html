@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Fish Tank</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+
+        <script src="libs/polyfill.js"></script>
+        <script src="src/svd.js"></script>
+        <script src="/src/posit1.js"></script>
+        <script src="/src/cv.js"></script>
+        <script src="src/aruco.js" defer></script>
+
+    </head>
+    <body>
+        <div class="content-container">
+
+            <div class="webcam-container">
+                <video id="video" width="640" height="480" autoplay></video>
+                <canvas id="canvas" style="width:400px; height:400px;"></canvas>
+            </div>
+
+
+            <div class="two-container">
+                <div class="tank-container">
+                    <div class="light-bar"></div>
+                    <video id="fish-video" src="./fish-video.mp4" width="500" height="400" autoplay loop></video>
+                </div>
+
+                <div class="interaction-screen">
+                    <div id="interaction-content">
+                        <div class="interaction distance">
+                            <div id="fish-display"></div>
+                        </div>
+                        <div class="interaction orientation">
+                            <h3> orientation Interaction</h3>
+                            <img src="random1.jpeg">
+                            <p>orientation correct</p>
+                        </div>
+                        <div class="interaction identity">
+                            <div id="identity-details" class="identity-container">
+                                <p><strong>Last Water Change: 5 days ago</p>
+
+                                <p>
+                                    <strong>Perform Water Change?</strong>
+                                    <button id="water-change">Yes</button>
+                                </p>
+                                <p id="water-change-status" style="display: none;"><strong>Status:</strong> Water change performed successfully!</p>
+                                <div id="water-health">
+                                    <h4>Water Health:</h4>
+                                    <ul>
+                                        <li><strong>pH:</strong> <span id="water-ph">--</span></li>
+                                        <li><strong>Alkalinity:</strong> <span id="water-alkalinity">--</span></li>
+                                        <li><strong>Hardness:</strong> <span id="water-hardness">--</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="interaction default active">
+                            <p><span id="clock">--:--:--</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="script.js" async defer></script>
+    </body>
+    <div style="margin: 15px;"><strong>Powered by <a href="https://damianofalcioni.github.io/js-aruco2/">js-aruco2</a></strong></div>
+</html>
